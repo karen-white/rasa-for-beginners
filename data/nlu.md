@@ -5,7 +5,6 @@
 - good morning
 - good evening
 - hey there
-- Hi
 
 ## intent:goodbye
 - bye
@@ -20,6 +19,7 @@
 - that sounds good
 - correct
 - sure
+- that's right
 - ok
 - why not
 - ok great
@@ -27,42 +27,30 @@
 - yeah, great
 - pretty good
 - fine
-- You bet
+- you bet
 - I sure did
 - more or less
+- yeah
 
 ## intent:deny
 - no
 - never
 - I don't think so
+- don't like that
 - no way
 - not really
-- none
 - absolutely not
-- no thanks
-- didn't do any
+- no thank you
 - no I didn't
-- could have been better
+- didn't do any
 - not great
+- could have been better
 - nope
 
-## intent:thankyou
-- okay great thanks
-- thank you
-- sure thanks
-- thanks bye
-- thanks
-
-## intent:bot_challenge
-- are you a bot?
-- are you a human?
-- am I talking to a bot?
-- am I talking to a human?
-
-## intent:inform
+## intent: inform
 - a full [8 hours](sleep)
 - only [four hours](sleep)
-- about [six hours](sleep)
+- about [6 hours](sleep)
 - [low](stress)
 - [medium](stress)
 - [high](stress)
@@ -73,11 +61,11 @@
 - Yeah, I played [tennis](exercise)
 - I went [swimming](exercise)
 - Took a [spin class](exercise)
-- Did some [boxing](exercise)
+- Did some (boxing)(exercise)
 - [rock climbing](exercise)
 - played some [basketball](exercise)
 - played [football](exercise)
-- I did a [workout](exercise) video
+- I did a [workout video](exercise)
 - I want to get up early and go for a run
 - Be more patient with my family
 - Try to be a better friend
@@ -102,12 +90,12 @@
 ## intent:out_of_scope
 - that's not what I want to do
 - wait stop
-- you're no help
+- you are no help
 - this is no help at all
 - how old are you
 - I want to order a pizza
 - tell me the weather
-- this isn't working
+- this isn't working 
 - I already told you that
 - don't like that
 - I don't want to tell you that
@@ -118,24 +106,64 @@
 - I want to do something else
 - I changed my mind
 
+
+## intent:mood_great
+- perfect
+- very good
+- great
+- amazing
+- wonderful
+- I am feeling very good
+- I am great
+- I'm good
+
+## intent:mood_unhappy
+- sad
+- very sad
+- unhappy
+- bad
+- very bad
+- awful
+- terrible
+- not very good
+- extremely sad
+- so sad
+
+## intent:thankyou
+- okay great thanks
+- thank you
+- sure thanks
+- thanks bye
+- thanks 
+
+## intent:bot_challenge
+- are you a bot?
+- are you a human?
+- am I talking to a bot?
+- am I talking to a human?
+
 ## intent:ask_lower_stress
 - What do I do if I'm too stressed?
 - How can I lower my stress level?
-- What are some good ways to lower stress?
+- What are some good ways to lower stress in general?
 - What are good ways to relax?
-- What are some things I can do lower my stress?
+- What are some things I can do to lower my stress?
+- how can I not be stressed
 
 ## intent:ask_eat_healthy
+- What's considered a healthy diet?
 - What's considered a good diet?
-- What's considered healthy food?
 - How do I follow a healthy diet?
 - What's an example of a healthy diet?
 - How do I eat healthy?
+- what should I eat?
 
 ## intent:ask_exercise
+- What's a good amount of exercise I should be getting?
 - What's a good amount of exercise for someone in their thirties?
 - How much exercise should I be getting?
 - How much exercise is recommended?
 - Is walking once a day enough exercise?
 - How much exercise should I do every day?
 - How many times per week should I go to the gym?
+- how much should I work out?

@@ -1,9 +1,12 @@
-from typing import Any, Text, Dict, List, Union
-from dotenv import load_dotenv
 
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+
+from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
+
+from dotenv import load_dotenv
 
 import requests
 import json
@@ -22,7 +25,8 @@ def create_health_log(confirm_exercise, exercise, sleep, diet, stress, goal):
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Authorization": f"Bearer {airtable_api_key}",
-    }  
+    }
+
     data = {
         "fields": {
             "Exercised?": confirm_exercise,
@@ -33,14 +37,15 @@ def create_health_log(confirm_exercise, exercise, sleep, diet, stress, goal):
             "Goal": goal,
         }
     }
+
     try:
         response = requests.post(
             request_url, headers=headers, data=json.dumps(data)
         )
         response.raise_for_status()
-    except requests.exceptions.HTTPError as err:
+    except requests.exeptions.HTTPError as err:
         raise SystemExit(err)
-    
+
     return response
     print(response.status_code)
 
@@ -53,19 +58,11 @@ class HealthForm(FormAction):
     def required_slots(tracker):
 
         if tracker.get_slot('confirm_exercise') == True:
-            return ["confirm_exercise", "exercise", "sleep",
-             "diet", "stress", "goal"]
+            return ["confirm_exercise", "exercise", "sleep", "diet", "stress", "goal"]
         else:
-            return ["confirm_exercise", "sleep",
-             "diet", "stress", "goal"]
-
+            return ["confirm_exercise", "sleep", "diet", "stress", "goal"]
+    
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
-        """A dictionary to map required slots to
-            - an extracted entity
-            - intent: value pairs
-            - a whole message
-            or a list of them, where a first match will be picked"""
-
         return {
             "confirm_exercise": [
                 self.from_intent(intent="affirm", value=True),
